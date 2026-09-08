@@ -21,14 +21,13 @@ jobs:
           distribution: temurin
           java-version: '21'
 
-      - name: Setup Gradle
+      - name: Setup Gradle 8.3
         uses: gradle/actions/setup-gradle@v6
-
-      - name: Grant execute permission
-        run: chmod +x gradlew
+        with:
+          gradle-version: '8.3'
 
       - name: Build
-        run: ./gradlew build
+        run: gradle build --no-daemon
 
       - name: Upload JAR
         uses: actions/upload-artifact@v4
@@ -36,3 +35,4 @@ jobs:
           name: reach-mod-jar
           path: build/libs/*.jar
           if-no-files-found: error
+          

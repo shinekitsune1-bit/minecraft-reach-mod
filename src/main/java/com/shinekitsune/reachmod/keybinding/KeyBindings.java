@@ -1,6 +1,5 @@
 package com.shinekitsune.reachmod.keybinding;
 
-import com.shinekitsune.reachmod.ReachMod;
 import com.shinekitsune.reachmod.screen.ReachModScreen;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.minecraft.client.MinecraftClient;
@@ -19,24 +18,15 @@ public class KeyBindings {
                         "category.reachmod"
                 )
         );
-
-        ReachMod.CLIENT_EXECUTOR.execute(() -> {
-            while (true) {
-                if (openConfigKeyBinding.wasPressed()) {
-                    MinecraftClient client = MinecraftClient.getInstance();
-
-                    if (client.currentScreen == null) {
-                        client.setScreen(new ReachModScreen());
-                    }
-                }
-
-                try {
-                    Thread.sleep(10);
-                } catch (InterruptedException e) {
-                    Thread.currentThread().interrupt();
-                    break;
-                }
-            }
-        });
     }
-						 }
+
+    public static void handleKeyInput() {
+        MinecraftClient client = MinecraftClient.getInstance();
+
+        while (openConfigKeyBinding.wasPressed()) {
+            if (client.currentScreen == null) {
+                client.setScreen(new ReachModScreen());
+            }
+        }
+    }
+}

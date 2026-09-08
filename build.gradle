@@ -14,10 +14,12 @@ repositories {
     mavenCentral()
 
     maven {
+        name = "Fabric"
         url = "https://maven.fabricmc.net/"
     }
 
     maven {
+        name = "Modrinth"
         url = "https://api.modrinth.com/maven"
     }
 }
@@ -25,7 +27,7 @@ repositories {
 dependencies {
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
 
-    mappings loom.officialMojangMappings()
+    mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
 
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 

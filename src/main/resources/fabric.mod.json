@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "reach_mod",
+  "version": "${version}",
+  "name": "Reach Mod",
+  "description": "A Minecraft mod that allows you to adjust your reach distance from 1-10 blocks with UI controls",
+  "authors": [
+    "MUSIXSHINE"
+  ],
+  "contact": {
+    "homepage": "https://github.com/shinekitsune1-bit/minecraft-reach-mod"
+  },
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.shinekitsune.reachmod.ReachMod"
+    ],
+    "client": [
+      "com.shinekitsune.reachmod.ReachModClient"
+    ]
+  },
+  "mixins": [
+    "reach_mod.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.15.11",
+    "fabric-api": "*",
+    "minecraft": "1.21.8"
+  }
+}

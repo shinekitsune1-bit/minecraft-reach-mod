@@ -1,0 +1,12 @@
+settings.gradle.kts
+dist/
+build/
+.gradle/
+.idea/
+*.iml
+out/
+*.class
+*.jar
+*.war
+*.log
+target/

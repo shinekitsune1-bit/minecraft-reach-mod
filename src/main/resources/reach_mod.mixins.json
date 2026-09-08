@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.shinekitsune.reachmod.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "PlayerInteractionManagerMixin.java"
+  ],
+  "client": [
+    "PlayerInteractionClientMixin.java"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
